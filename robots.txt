@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: mpot05.github.io/IgniteTest//sitemap.xml
+Sitemap: https://mpot05.github.io/IgniteTest/sitemap.xml
