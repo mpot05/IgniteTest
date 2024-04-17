@@ -36,7 +36,7 @@ function manualUpg1() {
         clickpower += 1;
         man1Cost = Math.round(man1Cost *= 1.25);
         setScore(cookie);
-        setHTML("Auto Upgrade 1: " + man1Cost, "man1");
+        setHTML("Manual Upgrade 1: " + man1Cost, "man1");
     }
 }
 
@@ -46,7 +46,7 @@ function autoUpg1() {
         autopower += 1;
         auto1Cost = Math.round(auto1Cost *= 1.25);
         setScore(cookie);
-        setHTML("Manual Upgrade 1: " + auto1Cost, "auto1");
+        setHTML("Auto Upgrade 1: " + auto1Cost, "auto1");
     }
 }
 
