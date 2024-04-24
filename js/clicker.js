@@ -13,6 +13,7 @@ window.onload = function () {
 }
 
 function auto() {
+    stupid = false;
     cookie += autopower;
     setScore(cookie);
 }
@@ -29,7 +30,7 @@ function reset() {
 }
 
 function clickCookie() {
-    stupid = true;
+    stupid = false;
     cookie += clickpower;
     setScore(cookie);
 }
