@@ -9,9 +9,7 @@ window.onload = function () {
     loadState();
     setInterval(auto, 1000);
     setInterval(saveState, 100);
-    setHTML("Manual Upgrade 1: "+man1Cost, "man1")
-    setHTML("Auto Upgrade 1: "+auto1Cost, "auto1")
-    setHTML(cookie, "score")
+    
 }
 
 function auto() {
@@ -56,19 +54,22 @@ function autoUpg1() {
 }
 
 function loadState() {
-    cookie = Number(localStorage.getItem("score"));
-    man1Cost = Number(localStorage.getItem("man1Cost"));
-    auto1Cost = Number(localStorage.getItem("auto1Cost"));
-    clickpower = Number(localStorage.getItem("clickpower"));
-    autopower = Number(localStorage.getItem("autopower"))
+    cookie = Number(localStorage.getItem("igscore"));
+    man1Cost = Number(localStorage.getItem("igman1Cost"));
+    auto1Cost = Number(localStorage.getItem("igauto1Cost"));
+    clickpower = Number(localStorage.getItem("igclickpower"));
+    autopower = Number(localStorage.getItem("igautopower"));
+    setHTML("Manual Upgrade 1: " + man1Cost, "man1");
+    setHTML("Auto Upgrade 1: " + auto1Cost, "auto1");
+    setHTML(cookie, "score")
 }
 
 function saveState() {
-    localStorage.setItem("score", cookie);
-    localStorage.setItem("man1Cost", man1Cost);
-    localStorage.setItem("auto1Cost", auto1Cost);
-    localStorage.setItem("clickpower", clickpower);
-    localStorage.setItem("autopower", autopower);
+    localStorage.setItem("igscore", cookie);
+    localStorage.setItem("igman1Cost", man1Cost);
+    localStorage.setItem("igauto1Cost", auto1Cost);
+    localStorage.setItem("igclickpower", clickpower);
+    localStorage.setItem("igautopower", autopower);
 }
 
 function setScore(num) {
