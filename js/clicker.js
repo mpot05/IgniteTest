@@ -6,7 +6,12 @@ let autopower = 0;
 let stupid = 0;
 
 window.onload = function () {
+    loadState();
     setInterval(auto, 1000);
+    setInterval(saveState, 100);
+    setHTML("Manual Upgrade 1: "+man1Cost, "man1")
+    setHTML("Auto Upgrade 1: "+auto1Cost, "auto1")
+    setHTML(cookie, "score")
 }
 
 function auto() {
@@ -48,6 +53,22 @@ function autoUpg1() {
         setScore(cookie);
         setHTML("Auto Upgrade 1: " + auto1Cost, "auto1");
     }
+}
+
+function loadState() {
+    cookie = Number(localStorage.getItem("score"));
+    man1Cost = Number(localStorage.getItem("man1Cost"));
+    auto1Cost = Number(localStorage.getItem("auto1Cost"));
+    clickpower = Number(localStorage.getItem("clickpower"));
+    autopower = Number(localStorage.getItem("autopower"))
+}
+
+function saveState() {
+    localStorage.setItem("score", cookie);
+    localStorage.setItem("man1Cost", man1Cost);
+    localStorage.setItem("auto1Cost", auto1Cost);
+    localStorage.setItem("clickpower", clickpower);
+    localStorage.setItem("autopower", autopower);
 }
 
 function setScore(num) {
