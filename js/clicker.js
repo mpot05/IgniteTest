@@ -3,7 +3,7 @@ let man1Cost = 25;
 let auto1Cost = 50;
 let clickpower = 1;
 let autopower = 0;
-let stupid = 0;
+let stupid = true;
 
 window.onload = function () {
     loadState();
@@ -29,6 +29,7 @@ function reset() {
 }
 
 function clickCookie() {
+    stupid = true;
     cookie += clickpower;
     setScore(cookie);
 }
@@ -59,9 +60,13 @@ function loadState() {
     auto1Cost = Number(localStorage.getItem("igauto1Cost"));
     clickpower = Number(localStorage.getItem("igclickpower"));
     autopower = Number(localStorage.getItem("igautopower"));
+    stupid = localStorage.getItem("igstupid");
     setHTML("Manual Upgrade 1: " + man1Cost, "man1");
     setHTML("Auto Upgrade 1: " + auto1Cost, "auto1");
     setHTML(cookie, "score")
+    if (stupid == true) {
+        reset();
+    }
 }
 
 function saveState() {
@@ -70,6 +75,7 @@ function saveState() {
     localStorage.setItem("igauto1Cost", auto1Cost);
     localStorage.setItem("igclickpower", clickpower);
     localStorage.setItem("igautopower", autopower);
+    localStorage.setItem("igstupid", stupid)
 }
 
 function setScore(num) {
